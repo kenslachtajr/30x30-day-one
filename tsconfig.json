@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cars-workspace/core-data": ["libs/core-data/src/index.ts"],
+      "@cars-workspace/material": ["libs/material/src/index.ts"],
+      "@cars-workspace/ui-toolbar": ["libs/ui-toolbar/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
