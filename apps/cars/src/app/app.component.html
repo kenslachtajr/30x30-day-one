@@ -1,2 +1,5 @@
-<cars-workspace-toolbar></cars-workspace-toolbar>
+<cars-workspace-toolbar [title]="title" [sidenav]="sidenav"></cars-workspace-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side"></mat-sidenav>
+</mat-sidenav-container>
 <cars-workspace-cars></cars-workspace-cars>
