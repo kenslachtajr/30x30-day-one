@@ -8,7 +8,7 @@
     </mat-card-title>
   </mat-card-header>
   <form (submit)="saved.emit(currentCar)">
-    <mat-card-content>
+    <mat-card-content class="d-flex flex-column">
       <mat-form-field class="full-width">
         <input matInput placeholder="Make" [(ngModel)]="currentCar.make" type="text" name="make">
       </mat-form-field>
