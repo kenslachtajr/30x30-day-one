@@ -1,1 +1,27 @@
-<p>cars-details works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+      <span *ngIf="currentCar.id; else elseBlock">{{currentCar.make}} {{currentCar.model}}</span>
+        <ng-template #elseBlock>Enter car details</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form (submit)="saved.emit(currentCar)">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Make" [(ngModel)]="currentCar.make" type="text" name="make">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Model" [(ngModel)]="currentCar.model" type="text" name="model">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Maximum Speed" [(ngModel)]="currentCar.maxSpeed" type="text" name="maxSpeed">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">Save</button>
+      <button type="button" mat-button (click)="cancelled.emit(currentCar)">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

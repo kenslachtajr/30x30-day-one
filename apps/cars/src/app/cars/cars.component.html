@@ -1,1 +1,20 @@
-<p>cars works!</p>
+<div class="container d-flex mt-3">
+  <!-- Cars List -->
+  <div class="col-50">
+    <cars-workspace-cars-list
+    [cars]="cars$ | async"
+    (selected)=selectCar($event)
+    (deleted)="deleteCar($event)"
+    >
+    </cars-workspace-cars-list>
+  </div>
+  <!-- Cars Details-->
+  <div class="col-50">
+    <cars-workspace-cars-details
+    [car]="selectedCar"
+    (saved)="saveCar($event)"
+    (cancelled)="cancel()">
+  </cars-workspace-cars-details>
+  </div>
+</div>
+
